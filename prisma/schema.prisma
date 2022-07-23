@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Matching {
+  user_id               String @id @default(auto()) @map("_id") @db.ObjectId
+  start_time            String
+  name                  String
+  attempts              String
+  Mistakes              String
+  completion_percentage String
+  total_time            String
+}
